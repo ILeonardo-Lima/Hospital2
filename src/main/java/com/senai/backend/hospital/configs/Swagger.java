@@ -10,7 +10,7 @@ import io.swagger.v3.oas.annotations.info.Info;
     info = @Info(
         title = "Hospital Com Vida",
         version = "1.0",
-        description = "Desenvolvedora: Leonardo Oliveira"
+        description = "Desenvolvedor: Leonardo Oliveira"
     )
 )
 public class Swagger {
