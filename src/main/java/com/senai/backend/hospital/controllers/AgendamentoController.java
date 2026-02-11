@@ -26,7 +26,7 @@ public class AgendamentoController {
 
     
     // salvar - POST
-    @PostMapping("/atualualizar")
+    @PostMapping("/atualizar")
     public AgendamentoResponseDTO salvar(@RequestBody AgendamentoRequestDTO agendamento) {
         return agendamentoService.salvar(agendamento);
     }
