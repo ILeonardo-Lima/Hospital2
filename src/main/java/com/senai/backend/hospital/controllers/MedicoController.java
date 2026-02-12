@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.senai.backend.hospital.dto.MedicoRequestDTO;
 import com.senai.backend.hospital.dto.MedicoResponseDTO;
@@ -58,9 +58,8 @@ public MedicoResponseDTO salvar(@RequestBody MedicoRequestDTO medico) {
 
     // atualizar - PUT
     @PutMapping("/atualizar/{id}")
-    public Medico atualizar(@PathVariable Integer id, @RequestBody Medico medico) {
-        return medicoService.atualizar(id, medico);
-    }
-
+   public Medico atualizar(@PathVariable Integer id, @RequestBody MedicoRequestDTO dto) {
+    return medicoService.atualizar(id, dto);
+}
     
 }

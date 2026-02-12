@@ -1,44 +1,17 @@
 package com.senai.backend.hospital.dto;
 
 public class MedicoRequestDTO {
-    
     private String nome;
     private String especializacao;
     private Integer limiteDiario;
 
-    public MedicoRequestDTO() {
-    }
+    // getters e setters (sem @NotNull)
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
 
-    public MedicoRequestDTO(String nome, String especializacao, Integer limiteDiario) {
-        this.nome = nome;
-        this.especializacao = especializacao;
-        this.limiteDiario = limiteDiario;
-    }
+    public String getEspecializacao() { return especializacao; }
+    public void setEspecializacao(String especializacao) { this.especializacao = especializacao; }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEspecializacao() {
-        return especializacao;
-    }
-
-    public void setEspecializacao(String especializacao) {
-        this.especializacao = especializacao;
-    }
-
-    public Integer getLimiteDiario() {
-        return limiteDiario;
-    }
-
-     void setLimiteDiario(Integer limitediario) {
-        this.limiteDiario = limiteDiario;
-    }
-
-
-
+    public Integer getLimiteDiario() { return limiteDiario; }
+    public void setLimiteDiario(Integer limiteDiario) { this.limiteDiario = limiteDiario; }
 }

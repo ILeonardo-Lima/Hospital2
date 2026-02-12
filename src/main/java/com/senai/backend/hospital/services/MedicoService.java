@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.senai.backend.hospital.dto.MedicoRequestDTO;
 import com.senai.backend.hospital.dto.MedicoResponseDTO;
 import com.senai.backend.hospital.models.Medico;
@@ -57,13 +58,22 @@ public MedicoResponseDTO salvar(MedicoRequestDTO medicoDTO) {
     }
 
     // atualizar - PUT
-    public Medico atualizar(Integer id, Medico medico) {
-        Medico med = medicoRepository.findById(id).get();
-        if (medico != null) {
-            medico.setId(med.getId());
-            return medicoRepository.save(medico);
-        }
-        return null;
+public Medico atualizar(Integer id, MedicoRequestDTO dto) {
+    Medico medico = medicoRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Médico não encontrado: " + id));
+
+    // Só altera se o campo veio no JSON (não null)
+    if (dto.getNome() != null) {
+        medico.setNome(dto.getNome());
     }
+    if (dto.getEspecializacao() != null) {
+        medico.setEspecializacao(dto.getEspecializacao());
+    }
+    if (dto.getLimiteDiario() != null) {
+        medico.setLimiteDiario(dto.getLimiteDiario());
+    }
+
+    return medicoRepository.save(medico);
+}
 
 }
