@@ -13,4 +13,9 @@ private Integer id;  // ← campo que você quer retornar
         this.id = id;
     }
 
+    // se quiser retornar mais coisas depois
+    // private String nome;
+    // public String getNome() { return nome; }
+    // public void setNome(String nome) { this.nome = nome; }
+
 }
