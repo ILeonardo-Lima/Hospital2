@@ -5,16 +5,14 @@ public class MedicoRequestDTO {
     private String nome;
     private String especializacao;
     private Integer limiteDiario;
-    private String observacoesMedicas;
 
     public MedicoRequestDTO() {
     }
 
-    public MedicoRequestDTO(String nome, String especializacao, Integer limiteDiario,  String observacoesMedicas) {
+    public MedicoRequestDTO(String nome, String especializacao, Integer limiteDiario) {
         this.nome = nome;
         this.especializacao = especializacao;
         this.limiteDiario = limiteDiario;
-        this.observacoesMedicas = observacoesMedicas;
     }
 
     public String getNome() {
@@ -41,13 +39,6 @@ public class MedicoRequestDTO {
         this.limiteDiario = limiteDiario;
     }
 
-    public String getObservacoesMedicas() {
-        return observacoesMedicas;
-    }
-
-    public void setObservacoesMedicas(String observacoesMedicas) {
-        this.observacoesMedicas = observacoesMedicas;
-    }
 
 
 }

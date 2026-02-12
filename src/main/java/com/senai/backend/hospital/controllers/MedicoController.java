@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
+import com.senai.backend.hospital.dto.MedicoRequestDTO;
+import com.senai.backend.hospital.dto.MedicoResponseDTO;
 import com.senai.backend.hospital.models.Medico;
 import com.senai.backend.hospital.services.MedicoService;
 
@@ -22,11 +23,11 @@ public class MedicoController {
     @Autowired
     private MedicoService medicoService;
 
-    // salvar - POST
-    @PostMapping("/salvar")
-    public Medico salvar(@RequestBody Medico medico) {
-        return medicoService.salvar(medico);
-    }
+// salvar - POST
+@PostMapping("/salvar")
+public MedicoResponseDTO salvar(@RequestBody MedicoRequestDTO medico) {
+    return medicoService.salvar(medico);
+}
 
     // buscar pelo id - GET
     @GetMapping("/buscarPorId/{id}")

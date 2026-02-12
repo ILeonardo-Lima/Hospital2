@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.senai.backend.hospital.dto.MedicoRequestDTO;
+import com.senai.backend.hospital.dto.MedicoResponseDTO;
 import com.senai.backend.hospital.models.Medico;
 import com.senai.backend.hospital.repositories.MedicoRepository;
 
@@ -15,9 +16,20 @@ public class MedicoService {
     private MedicoRepository medicoRepository;
 
     // salvar - POST
-    public Medico salvar(Medico medico) {
-        return medicoRepository.save(medico);
-    }
+public MedicoResponseDTO salvar(MedicoRequestDTO medicoDTO) {
+    Medico medicoNovo = new Medico();
+
+    medicoNovo.setNome(medicoDTO.getNome());
+    medicoNovo.setEspecializacao(medicoDTO.getEspecializacao());
+    medicoNovo.setLimiteDiario(medicoDTO.getLimiteDiario());
+
+    Medico salvo = medicoRepository.save(medicoNovo);
+
+    MedicoResponseDTO response = new MedicoResponseDTO();
+    response.setId(salvo.getId());  // retorna o ID gerado pelo banco (útil para confirmar)
+
+    return response;
+}
 
     // buscar pelo id - GET
     public Medico buscarPorId(Integer id) {

@@ -2,21 +2,15 @@ package com.senai.backend.hospital.dto;
 
 public class MedicoResponseDTO {
 
-        private String observacoesMedicas;
+private Integer id;  // ← campo que você quer retornar
 
-    public MedicoResponseDTO() {
+    // getters e setters
+    public Integer getId() {
+        return id;
     }
 
-    public MedicoResponseDTO(String observacoesMedicas) {
-        this.observacoesMedicas = observacoesMedicas;
-    }
-
-    public String getObservacoesMedicas() {
-        return observacoesMedicas;
-    }
-
-    public void setObservacoesMedicas(String observacoesMedicas) {
-        this.observacoesMedicas = observacoesMedicas;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
