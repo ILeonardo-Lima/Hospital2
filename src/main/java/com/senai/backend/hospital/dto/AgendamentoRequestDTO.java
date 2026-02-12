@@ -7,16 +7,36 @@ import com.senai.backend.hospital.enums.Status;
 public class AgendamentoRequestDTO {
     
     private LocalDateTime dataHora;
+    private Integer medicoId;
+    private Integer pacienteId;
     private String observacoesMedicas;
     private Status status;
 
     public AgendamentoRequestDTO() {
     }
 
-    public AgendamentoRequestDTO(Status status, LocalDateTime dataHora, String observacoesMedicas) {
+    public AgendamentoRequestDTO(Integer medicoId, Integer pacienteId, Status status, LocalDateTime dataHora, String observacoesMedicas) {
+        this.medicoId = medicoId;
+        this.pacienteId = pacienteId;
         this.status = status;
         this.dataHora = dataHora;
         this.observacoesMedicas = observacoesMedicas;
+    }
+
+    public Integer getMedicoId() {
+        return medicoId;
+    }
+
+    public void setMedicoId(Integer medicoId) {
+        this.medicoId = medicoId;
+    }
+
+    public Integer getPacienteId() {
+        return pacienteId;
+    }
+
+    public void setPacienteId(Integer pacienteId) {
+        this.pacienteId = pacienteId;
     }
 
     public LocalDateTime getDataHora() {
