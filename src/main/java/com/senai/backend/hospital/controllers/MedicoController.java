@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
-import com.senai.backend.hospital.models.Agendamento;
+
 import com.senai.backend.hospital.models.Medico;
 import com.senai.backend.hospital.services.MedicoService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 public class MedicoController {
@@ -56,7 +56,7 @@ public class MedicoController {
     }
 
     // atualizar - PUT
-    @PutMapping("/salvar/{id}")
+    @PutMapping("/atualizar/{id}")
     public Medico atualizar(@PathVariable Integer id, @RequestBody Medico medico) {
         return medicoService.atualizar(id, medico);
     }
