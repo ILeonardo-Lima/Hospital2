@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.senai.backend.hospital.dto.PacienteRequestDTO;
+import com.senai.backend.hospital.dto.PacienteResponseDTO;
 import com.senai.backend.hospital.models.Paciente;
 import com.senai.backend.hospital.repositories.PacienteRepository;
 
@@ -14,11 +16,23 @@ public class PacienteService {
     @Autowired
     private PacienteRepository pacienteRepository;
 
-    // salvar - POST
-    public Paciente salvar(Paciente paciente) {
-        return pacienteRepository.save(paciente);
-    }
+    // método para PUT / atualizar
 
+public PacienteResponseDTO salvar(PacienteRequestDTO dto) {
+    // código que transforma DTO em Paciente, salva e retorna ResponseDTO
+    Paciente pacienteNovo = new Paciente();
+    pacienteNovo.setNome(dto.getNome());
+    pacienteNovo.setIdade(dto.getIdade());
+    // ... outros sets
+
+    Paciente salvo = pacienteRepository.save(pacienteNovo);
+
+    PacienteResponseDTO response = new PacienteResponseDTO();
+    response.setId(salvo.getId());
+    // ... outros campos se quiser
+
+    return response;
+}
     // buscar pelo id - GET
     public Paciente buscarPorId(Integer id) {
         return pacienteRepository.findById(id).get();
@@ -44,7 +58,7 @@ public class PacienteService {
         return false;
     }
 
-    // atualizar - PUT
+    // atualizar - PUT (versão antiga que você tinha, mantive para referência)
     public Paciente atualizar(Integer id, Paciente paciente) {
         Paciente pac = pacienteRepository.findById(id).get();
         if (paciente != null) {
@@ -53,5 +67,4 @@ public class PacienteService {
         }
         return null;
     }
-
 }

@@ -23,6 +23,9 @@ public class Paciente {
     @Column(name="nome")
     private String nome;
 
+    @Column(name="idade")
+    private Integer idade;
+
     @Column(name="status")
     private boolean status;
 
@@ -38,11 +41,12 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, Integer id, String nome, boolean status, List<Agendamento> agendamentos) {
+    public Paciente(LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, Integer id, String nome, Integer idade, boolean status, List<Agendamento> agendamentos) {
         this.dataHoraAtualizacao = LocalDateTime.now();
         this.dataHoraCriacao = LocalDateTime.now();
         this.id = id;
         this.nome = nome;
+        this.idade = idade;
         this.status = true;
         this.agendamentos = agendamentos;
     }
@@ -61,6 +65,14 @@ public class Paciente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Integer getIdade() {
+        return idade;
+    }
+
+    public void setIdade(Integer idade) {
+        this.idade = idade;
     }
 
     public boolean isStatus() {
