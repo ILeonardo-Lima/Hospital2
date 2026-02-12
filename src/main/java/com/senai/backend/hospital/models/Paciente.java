@@ -26,14 +26,23 @@ public class Paciente {
     @Column(name="idade")
     private Integer idade;
 
+    @Column(name="cpf")
+    private String cpf;
+
+    @Column(name="endereco")
+    private String endereco;
+
+    @Column(name="observacoesPaciente")
+    private String observacoes;
+
     @Column(name="status")
     private boolean status;
 
-    @Column(name="data_hora_criacao")
-    private LocalDateTime dataHoraCriacao;
+    //@Column(name="data_hora_criacao")
+    //private LocalDateTime dataHoraCriacao;
 
-    @Column(name="data_hora_atualizacao")
-    private LocalDateTime dataHoraAtualizacao;
+    //@Column(name="data_hora_atualizacao")
+    //private LocalDateTime dataHoraAtualizacao;
 
     @OneToMany(mappedBy="paciente")
     private List<Agendamento> agendamentos;
@@ -41,12 +50,15 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, Integer id, String nome, Integer idade, boolean status, List<Agendamento> agendamentos) {
-        this.dataHoraAtualizacao = LocalDateTime.now();
-        this.dataHoraCriacao = LocalDateTime.now();
+    public Paciente(LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, Integer id, String nome, Integer idade, String cpf, String endereco, String observacoes, boolean status, List<Agendamento> agendamentos) {
+        //this.dataHoraAtualizacao = LocalDateTime.now();
+        //this.dataHoraCriacao = LocalDateTime.now();
         this.id = id;
         this.nome = nome;
         this.idade = idade;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.observacoes = observacoes;
         this.status = true;
         this.agendamentos = agendamentos;
     }
@@ -75,6 +87,30 @@ public class Paciente {
         this.idade = idade;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
     public boolean isStatus() {
         return status;
     }
@@ -83,21 +119,21 @@ public class Paciente {
         this.status = status;
     }
 
-    public LocalDateTime getDataHoraCriacao() {
-        return dataHoraCriacao;
-    }
+    //public LocalDateTime getDataHoraCriacao() {
+    //    return dataHoraCriacao;
+    // }
 
-    public void setDataHoraCriacao(LocalDateTime dataHoraCriacao) {
-        this.dataHoraCriacao = dataHoraCriacao;
-    }
+    //public void setDataHoraCriacao(LocalDateTime dataHoraCriacao) {
+    //    this.dataHoraCriacao = dataHoraCriacao;
+    //}
 
-    public LocalDateTime getDataHoraAtualizacao() {
-        return dataHoraAtualizacao;
-    }
+    //public LocalDateTime getDataHoraAtualizacao() {
+    //    return dataHoraAtualizacao;
+    //}
 
-    public void setDataHoraAtualizacao(LocalDateTime dataHoraAtualizacao) {
-        this.dataHoraAtualizacao = dataHoraAtualizacao;
-    }
+    //public void setDataHoraAtualizacao(LocalDateTime dataHoraAtualizacao) {
+    //    this.dataHoraAtualizacao = dataHoraAtualizacao;
+    //}
 
     public List<Agendamento> getAgendamentos() {
         return agendamentos;

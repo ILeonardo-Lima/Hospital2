@@ -39,11 +39,11 @@ public class Tratamento {
     @Column(name="duracao_minutos")
     private int duracaoMinutos;
 
-    @Column(name="data_hora_criacao")
-    private LocalDateTime dataHoraCriacao;
+    //@Column(name="data_hora_criacao")
+    //private LocalDateTime dataHoraCriacao;
 
-    @Column(name="data_hora_atualizacao")
-    private LocalDateTime dataHoraAtualizacao;
+    //@Column(name="data_hora_atualizacao")
+    //private LocalDateTime dataHoraAtualizacao;
 
     @OneToMany(mappedBy="tratamento")
     private List<Categoria> categorias;
@@ -55,10 +55,13 @@ public class Tratamento {
     public Tratamento() {
     }
 
-    public Tratamento(Double custo, LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, String descricao, int duracaoMinutos, Integer id, Status status, List<Categoria> categorias, Agendamento agendamento) {
+    public Tratamento(Double custo, LocalDateTime dataHoraAtualizacao, LocalDateTime dataHoraCriacao, 
+        String descricao, int duracaoMinutos, Integer id, Status status, 
+        List<Categoria> categorias, Agendamento agendamento) {
+              
         this.custo = custo;
-        this.dataHoraAtualizacao = LocalDateTime.now();
-        this.dataHoraCriacao = LocalDateTime.now();
+        //this.dataHoraAtualizacao = LocalDateTime.now();
+        //this.dataHoraCriacao = LocalDateTime.now();
         this.descricao = descricao;
         this.duracaoMinutos = duracaoMinutos;
         this.id = id;
@@ -107,21 +110,21 @@ public class Tratamento {
         this.duracaoMinutos = duracaoMinutos;
     }
 
-    public LocalDateTime getDataHoraCriacao() {
-        return dataHoraCriacao;
-    }
+    //public LocalDateTime getDataHoraCriacao() {
+    //    return dataHoraCriacao;
+    //}
 
-    public void setDataHoraCriacao(LocalDateTime dataHoraCriacao) {
-        this.dataHoraCriacao = dataHoraCriacao;
-    }
+    //public void setDataHoraCriacao(LocalDateTime dataHoraCriacao) {
+    //    this.dataHoraCriacao = dataHoraCriacao;
+    //}
 
-    public LocalDateTime getDataHoraAtualizacao() {
-        return dataHoraAtualizacao;
-    }
+    //public LocalDateTime getDataHoraAtualizacao() {
+    //    return dataHoraAtualizacao;
+    //}
 
-    public void setDataHoraAtualizacao(LocalDateTime dataHoraAtualizacao) {
-        this.dataHoraAtualizacao = dataHoraAtualizacao;
-    }
+    //public void setDataHoraAtualizacao(LocalDateTime dataHoraAtualizacao) {
+    //    this.dataHoraAtualizacao = dataHoraAtualizacao;
+    //}
 
     public List<Categoria> getCategorias() {
         return categorias;
