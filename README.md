@@ -1,4 +1,4 @@
-# # Hospital Management API - Hospital
+# # Hospital Management API - Hospital - Ainda em Atualização
 
 API RESTful para gerenciamento de um sistema hospitalar desenvolvida como projeto para o curso de Backend do SENAI 2025.
 
