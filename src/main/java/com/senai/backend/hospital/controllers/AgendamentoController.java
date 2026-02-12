@@ -26,7 +26,7 @@ public class AgendamentoController {
 
     
     // salvar - POST
-    @PostMapping("/atualizar")
+    @PostMapping("/salvar")
     public AgendamentoResponseDTO salvar(@RequestBody AgendamentoRequestDTO agendamento) {
         return agendamentoService.salvar(agendamento);
     }
@@ -59,7 +59,7 @@ public class AgendamentoController {
     }
 
     // atualizar - PUT
-    @PutMapping("/salvar/{id}")
+    @PutMapping("/atualizar/{id}")
     public Agendamento atualizar(@PathVariable Integer id, @RequestBody Agendamento agendamento) {
         return agendamentoService.atualizar(id, agendamento);
     }
