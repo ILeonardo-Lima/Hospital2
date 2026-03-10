@@ -18,10 +18,9 @@ API RESTful para gerenciamento de um sistema hospitalar desenvolvida como projet
 - Spring Boot 3.x
 - Spring Data JPA (Hibernate)
 - Spring Security + JWT
-- PostgreSQL (ou MySQL/MariaDB)
+- PostgreSQL
 - Maven
-- Lombok
-- Swagger (Springdoc OpenAPI) para documentação da API
+- Swagger
 
 ## 📋 Práticas Adotadas
 
